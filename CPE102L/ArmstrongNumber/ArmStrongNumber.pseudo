@@ -1,0 +1,42 @@
+START
+    Declarations
+        num initialNum
+        num originalNum
+        num remainder
+        num powerCounter = 0
+        num result = 0
+        num digitPower
+    houseKeeping()
+    detailLoop()
+    endOfJob()
+STOP
+
+houseKeeping()
+    output "This program determines whether the value input is an Armstrong Number or not."
+    output "Enter an integer: "
+    input initialNum
+    originalNum = initialNum
+return
+
+detailLoop()
+    while originalNum <> 0
+        originalNum = originalNum / 10
+        powerCounter = powerCounter + 1
+    endwhile
+    originalNum = initialNum
+
+    while originalNum <> 0
+        remainder = originalNum % 10
+        digitPower = remainder ^ powerCounter
+        result = result + digitPower
+        originalNum = originalNum / 10
+    endwhile
+return
+
+endOfJob()
+    if result = initialNum then
+        output "The number, ", initialNum, " is an Armstrong Number."
+    else
+        output "The number, ", initialNum, " is not an Armstrong Number."
+    endif
+return

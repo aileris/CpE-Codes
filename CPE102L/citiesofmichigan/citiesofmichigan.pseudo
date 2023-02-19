@@ -1,0 +1,34 @@
+START
+    Declarations
+        num size = 10
+        string michiganCities[size] = "Acme", "Albion", "Detroit", "Watervliet", 
+        "Coloma", "Saginaw", "Richland", "Glenn", "Midland", "Brooklyn"
+        string city
+        string foundCity = "N"
+        num sub = 0
+    houseKeeping()
+    while sub < size
+        detailLoop()
+    endwhile
+    endOfJob()
+STOP
+
+houseKeeping()
+    output "Enter city in the State of Michigan: "
+    input city
+return
+
+detailLoop()
+    if city == michiganCities[sub] then
+        foundCity = "Y"
+    endif
+    sub = sub + 1
+return
+
+endOfJob()
+    if foundCity == "Y" then
+        output "The city is found."
+    else
+        output "The city is not found."
+    endif
+return

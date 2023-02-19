@@ -1,0 +1,27 @@
+START
+    Declarations
+        string name
+        num age
+    houseKeeping()
+    detailLoop()
+    endOfJob()
+STOP
+
+houseKeeping()
+    output "Enter passenger name: "
+    input name
+    output "Enter passenger age: "
+    input age
+return
+
+detailLoop()
+    if age <= 6 OR 65 <= age then
+        output "The passenger, " name ", qualify for a 25% discount."
+    else
+        output "The passenger, " name ", does not qualify for a 25% discount."
+    endif
+return
+
+endOfJob()
+    output "Passenger qualifications complete."
+return

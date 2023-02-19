@@ -1,0 +1,33 @@
+START
+    Declarations
+        string QUIT = "X"
+        num leftHandCounter = 0
+        num rightHandCounter = 0
+        string dexterity
+    houseKeeping()
+    while dexterity <> QUIT
+        detailLoop()
+    endwhile
+    endOfJob()
+STOP
+
+houseKeeping()
+    output "Enter dexterity (L or R): "
+    input dexterity
+return
+
+detailLoop()
+    if dexterity == "L" then
+        leftHandCounter = leftHandCounter + 1
+    else
+        rightHandCounter = rightHandCounter + 1
+    endif
+    output "Enter dexterity or " QUIT " to quit: "
+    input dexterity
+return
+
+endOfJob()
+    output "The total amount of left handed people are: " leftHandCounter
+    output "The total amount of right handed people are: " rightHandCounter
+    output "Dexterity counter complete."
+return

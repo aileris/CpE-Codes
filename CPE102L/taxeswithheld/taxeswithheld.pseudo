@@ -1,0 +1,20 @@
+START
+    Declaration
+        num salary = 1250.00
+        num stateTax
+        num federalTax
+        num numDependents = 2
+        num dependentDeduction
+        num totalWithHolding
+        num takeHomePay
+    stateTax = salary * 0.065
+    federalTax = salary * 0.28
+    dependentDeduction = salary * 0.025 * numDependents
+    totalWithHolding = stateTax + federalTax + dependentDeduction
+    takeHomePay = salary - totalWithHolding
+    output "State Tax: $", stateTax
+    output "Federal Tax: $", federalTax
+    output "Dependents: $", dependentDeduction
+    output "Salary: $", salary
+    output "Take-Home Pay: $", takeHomePay
+STOP

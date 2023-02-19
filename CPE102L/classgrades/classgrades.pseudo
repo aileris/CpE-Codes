@@ -1,0 +1,39 @@
+START
+    Declarations
+        num studentID
+        string studentName
+        num GPA
+        OutputFile ClassGrades
+        num QUIT = 999
+    houseKeeping()
+    while studentID != QUIT
+        detailLoop()
+    endwhile
+    endOfJob()
+STOP
+
+houseKeeping()
+    open ClassGrades "ClassGrades.txt"
+    output "Enter Student ID Number: "
+    input studentID
+    output "Enter Student Name: "
+    input studentName
+    output "Enter GPA: "
+    input GPA
+return
+
+detailLoop()
+    output studentID, studentName, GPA to ClassGrades
+    output "Enter another Student ID Number or ", QUIT, " to quit: "
+    input studentID
+    if studentID != QUIT
+        output "Enter Student Name: "
+        input studentName
+        output "Enter GPA: "
+        input GPA
+    endif
+return
+
+endOfJob()
+    close ClassGrades
+return

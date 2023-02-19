@@ -1,0 +1,20 @@
+START
+    Declarations
+        num initialMoney
+        num interestAmount
+        num numberOfYears
+    output "Enter principal amount: "
+    input initialMoney
+    output "Enter annual interest rate (decimal form): "
+    input interestAmount
+    output "Enter the period in years: "
+    input numberOfYears
+
+    output "Total amount accumulated with the inclusion of interest rate: ", investmentCalculator(initialMoney, interestAmount, numberOfYears)
+STOP
+
+num investmentCalculator(num balance, num rate, num period)
+    Declarations
+        num principalAmount
+    principalAmount = balance + (balance * rate * period)
+return principalAmount

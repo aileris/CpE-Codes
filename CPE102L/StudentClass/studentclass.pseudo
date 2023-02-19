@@ -1,0 +1,41 @@
+class Student
+    Declarations
+        public num studentNumber
+        public string studentName
+        public num grade
+        public string status
+    void Student(num aStudentNumber, string aStudentName, num aGrade, string aStatus)
+        num setStudentNumber()
+            studentNumber = aStudentNumber
+        return
+
+        string setStudentName()
+            studentName = aStudentName
+        return
+
+        num setStudentGrade()
+            grade = aGrade
+        return
+
+        string setStudentStatus()
+            status = aStatus
+        return
+    return
+endClass
+
+START
+    Student aStudent(10, "Jeremy Alvarez", 65, "Pass")
+    output "Student number: ", aStudent.studentNumber
+    output "Student name: ", aStudent.studentName
+    output "Grade: ", aStudent.grade
+    output "Status: " statusDeterminer(aStudent.grade)
+STOP
+
+string statusDeterminer(num grade)
+    string status
+    if(75 <= grade)
+        status = "Pass"
+    else
+        status = "Fail"
+    endif
+return status

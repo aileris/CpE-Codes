@@ -1,0 +1,33 @@
+START
+    Declarations
+        InputFile draftRecords
+        OutputFile finalRecords
+        string studentName
+        num studentGrade
+        string studentStatus
+    housekeeping()
+    while not eof
+        detailLoop()
+    endwhile
+    endOfJob()
+STOP
+
+houseKeeping()
+    open draftRecords "draftRecords.dat"
+    open finalRecords "finalRecords.dat"
+    input studentName, studentGrade from draftFile
+return
+
+detailLoop()
+    if 75 <= studentGrade
+        studentStatus = "Pass"
+    else
+        studentStatus = "Fail"
+    output studentName, studentGrade, studentStatus to finalRecords
+    input studentName, studentGrade from draftFile
+return
+
+endOfJob()
+    close draftRecords
+    close finalRecords
+return

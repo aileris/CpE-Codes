@@ -1,0 +1,99 @@
+class Section_401k
+    Declarations
+        private num annualSalary
+        private num annualSalaryIncrease
+        private num annualReturnRate
+        private num currentAge
+        private num retirementAge
+        private num current401kBalance
+        private num contribution401k
+        private num employerMatch
+        private num employerMaxContribution
+        private num totalAccountValue
+
+    public void populateAttributes()
+        output "Enter Annual Salary ($): "
+        input annualSalary
+        output "Enter Annual Salary Increase (%): "
+        input annualSalaryIncrease
+        output "Enter Annual Rate of Return (%): "
+        input annualReturnRate
+        output "Enter Current Age: "
+        input currentAge
+        output "Enter Age of Retirement: "
+        input retirementAge
+        output "Enter Current 401k Balance ($): "
+        input current401kBalance
+        output "Enter Contribution to 401k (%): "
+        input contribution401k
+        output "Enter Employer Match (%): "
+        input employerMatch
+        output "Enter Employer Max Contribution (%): "
+        input employerMaxContribution
+        percentToDecimal()
+    return
+
+    private void percentToDecimal()
+        annualSalaryIncrease = annualSalaryIncrease / 100
+        annualReturnRate = annualReturnRate / 100
+        contribution401k = contribution401k / 100
+        employerMatch = employerMatch / 100
+        employerMaxContribution = employerMaxContribution / 100
+    return
+
+    private void totalAccountValueCalculator()
+        num x
+        num y
+        num n
+        num YC
+        num EC
+        num power
+        num first
+        num second
+        num third
+        n = retirementAge - currentAge
+        YC = (annualSalary * contribution401k) / 12
+        EC = YC * employerMatch
+        power = n * 12
+        x = 1 + (annualReturnRate/12)
+        y = x^power
+        first = current401kBalance * y
+        second = (YC + EC)*(y-1) / (annualReturnRate / 12)
+        third = x
+        totalAccountValue = first + second * third
+    return
+
+    public void displayAttributes()
+        totalAccountValueCalculator()
+        output " "
+        output "Internal Revenue Code: Section 401(k)"
+        output "Annual Salary ($): ", annualSalary
+        output "Annual Salary Increase (%): ", annualSalaryIncrease
+        output "Annual Rate of Return (%): ", annualReturnRate
+        output "Current Age: ", currentAge
+        output "Retirement Age: ", retirementAge
+        output "Current 401k Balance ($): ", current401kBalance
+        output "Contribution to 401k (%): ", contribution401k
+        output "Employer Match (%): ", employerMatch
+        output "Employer Max Contribution (%): ", employerMaxContribution
+        output " "
+        output "Your 401(k) Summary"
+        output "Annual Salary ($): ", annualSalary
+        output "Annual Salary Increase (%): ", annualSalaryIncrease
+        output "Annual Rate of Return (%): ", annualReturnRate
+        output "Current Age: ", currentAge
+        output "Retirement Age: ", retirementAge
+        output "Current 401k Balance ($): ", current401kBalance
+        output "Contribution to 401k (%): ", contribution401k
+        output "Employer Match (%): ", employerMatch
+        output "Employer Max Contribution (%): ", employerMaxContribution
+        output "Total Account Value at Age ", retirementAge, ": $", totalAccountValue
+    return
+endclass
+
+START
+    Declarations
+        Section_401k calculator401k
+    calculator401k.populateAttributes()
+    calculator401k.displayAttributes()
+STOP 

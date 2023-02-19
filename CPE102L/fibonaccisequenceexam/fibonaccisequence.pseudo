@@ -1,0 +1,30 @@
+START
+    Declarations
+        num firstTerm = 0
+        num secondTerm = 1
+        num thirdTerm
+        num fibonacciLimit = 15
+        num fibonacciStart = 2
+    houseKeeping()
+    while fibonacciStart < fibonacciLimit
+        detailLoop()
+    endwhile
+    endOfJob()
+STOP
+
+houseKeeping()
+    output firstTerm, ", ", secondTerm, ", "
+return
+
+detailLoop()
+    thirdTerm = firstTerm + secondTerm
+    output thirdTerm, ", "
+    firstTerm = secondTerm
+    secondTerm = thirdTerm
+    fibonacciStart = fibonacciStart + 1
+return
+
+endOfJob()
+    output "Fibonacci sequence complete"
+return
+
